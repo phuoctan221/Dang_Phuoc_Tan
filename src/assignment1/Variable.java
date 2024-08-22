@@ -8,8 +8,9 @@ public class Variable {
     
     public static void main(String[] args) {
         Scanner keyboard = new Scanner(System.in);
-        System.out.println("Nhap vao 2 so: ");
+        System.out.println("Nhap vao so thu nhat: ");
         int a = keyboard.nextInt();
+        System.out.println("Nhap vao so thu hai: ");
         int b = keyboard.nextInt();
         int c = a+b;
         int d = a-b;
