@@ -7,34 +7,32 @@ public class Random_HomeWork {
 
     public static void main(String[] args) {
         
-    Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         Random random = new Random();
 
         int score = 0;
         int incorrectCount = 0;
 
         while (incorrectCount < 3) {
-            // Generate a random number of terms between 2 and 5
+            
             int numTerms = random.nextInt(4) + 2;
             int sum = 0;
+            String problem = "";
 
-            // Build the problem string
-            StringBuilder problem = new StringBuilder();
             for (int i = 0; i < numTerms; i++) {
-                int number = random.nextInt(10) + 1; // Number between 1 and 10
+                int number = random.nextInt(10) + 1;
                 sum += number;
-                problem.append(number);
-                if (i < numTerms - 1) {
-                    problem.append(" + ");
-                }
-            }
-            problem.append(" = ");
 
-            // Display the problem
-            System.out.print(problem.toString());
+                if (i > 0) {
+                    problem += " + ";
+                }
+                problem += number;
+            }
+            problem += " = ";
+
+            System.out.print(problem);
             int userAnswer = scanner.nextInt();
 
-            // Check the user's answer
             if (userAnswer == sum) {
                 System.out.println("Correct!");
                 score++;
@@ -44,7 +42,6 @@ public class Random_HomeWork {
             }
         }
 
-        // Show final score
         System.out.println("You earned " + score + " total points.");
         scanner.close();
 
